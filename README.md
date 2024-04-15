@@ -28,6 +28,43 @@ System.out.println("Frame " + ack + " has been retransmitted.");
 System.out.println("Acknowledgment Received for Frame "+ ack);
 System.out.println("All Frames Received Successfully");
 }
+
+
+
+###parity check
+import java.util.*;
+class Parity
+{
+public static void main(String[] args)
+{
+Scanner in = new Scanner(System.in);
+System.out.println("Enter the size");
+int size = in.nextInt();
+System.out.println("Enter the message as bits");
+String mess = in.next();
+int[] arr = new int[size + 1];
+for (int i = 0; i < size; i++)
+{
+arr[i] = mess.charAt(i) - '0';
+}
+int count = 0;
+for (int i = 0; i < size; i++)
+{
+if (arr[i] == 1)
+{
+count++;
+}
+}
+arr[size] = (count % 2 == 0) ? 0 : 1;
+System.out.println("The modified bits after adding parity is");
+for (int i = 0; i < size + 1; i++)
+{
+System.out.print(arr[i]);
+}
+System.out.println();
+}
+}
+
 }
 while (ack == window);
 }
