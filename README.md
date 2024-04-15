@@ -28,7 +28,10 @@ System.out.println("Frame " + ack + " has been retransmitted.");
 System.out.println("Acknowledgment Received for Frame "+ ack);
 System.out.println("All Frames Received Successfully");
 }
-
+}
+while (ack == window);
+}
+}
 
 
 ###parity check
@@ -65,10 +68,7 @@ System.out.println();
 }
 }
 
-}
-while (ack == window);
-}
-}
+
 
 
 
